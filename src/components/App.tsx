@@ -1,11 +1,12 @@
 import React from 'react'
+import Layout from '../layouts/Layout'
 
 const App: React.FC = () => {
   return (
-        <div className="App">
-            sup
-        </div>
 
+        <Layout>
+            sup
+        </Layout>
   )
 }
 

@@ -4,9 +4,7 @@
     "standard-with-typescript"
   ],
   "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
+    "browser": true
   },
   "parserOptions": {
     "project": [
