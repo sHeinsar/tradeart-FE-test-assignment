@@ -12,7 +12,7 @@ export const Container = styled.div`
   top: 60px;
   border-radius: 5px;
   padding-inline: 20px;
-  width: 450px;
+  max-width: 450px;
   height: 250px;
   background: #FFFFFF;
   display: flex;
