@@ -1,14 +1,12 @@
 import styled from 'styled-components'
-import { ReactComponent as bitCasinoLogo } from '../../assets/bitcasino-logo.svg'
 
 export const StyledDescriptionContainer = styled.div`
-  padding-inline: 125px;
-  margin: 50px 0 0 0;
-  display: grid;
-  grid-template-rows: 20% 1fr 70%
+  display: flex;
+  flex-direction: column;
 `
 
 export const StyledDescriptionTitle = styled.h1`
+  margin-top: 80px;
   max-width: 491px;
   color: #FFFFFF;
   font-family: "Kohinoor Devanagari", serif;
@@ -20,7 +18,7 @@ export const StyledDescriptionText = styled.span`
   max-width: 400px;
   font-family: "Kohinoor Devanagari", serif;
   color: #9b9999;
-`
-
-export const StyledBitCasinoLogo = styled(bitCasinoLogo)`
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
 `
