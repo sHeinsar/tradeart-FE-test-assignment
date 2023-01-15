@@ -7,7 +7,7 @@ export const Content = styled.div`
   flex: 1 1 auto;
   background: url(${leprechaunImage}) no-repeat;
   background-position-x: 40em;
-  background-position-y: bottom;
+  background-position-y: 70%;
   background-size: 650px;
   padding-bottom: 200px;
 `
@@ -22,6 +22,8 @@ export const Container = styled.div`
 
 export const CurrencyListContainer = styled.div`
   margin-top: 20px;
+  max-height: 400px;
+  overflow-y: scroll;
 `
 
 export const StyledBitCasinoLogo = styled(bitCasinoLogo)`
