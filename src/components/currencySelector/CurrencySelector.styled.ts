@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
-interface InputProps {
-  hasError: boolean
+interface Props {
+  hasError?: boolean
+  disabledStyle?: boolean
 }
 
 export const Container = styled.div`
@@ -28,7 +29,7 @@ export const InputContainer = styled.div`
   position: relative;
 `
 
-export const StyledInput = styled.input<InputProps>`
+export const StyledInput = styled.input<Props>`
   text-transform: uppercase;
   width: 300px;
   height: 40px;
@@ -37,7 +38,7 @@ export const StyledInput = styled.input<InputProps>`
   padding-left: 15px;
 `
 
-export const StyledInputText = styled.div<InputProps>`
+export const StyledInputText = styled.div<Props>`
   padding: 0 5px;
   position: absolute;
   background: #FFFFFF;
@@ -49,14 +50,14 @@ export const StyledInputText = styled.div<InputProps>`
   color: ${props => props.hasError ? 'red' : '#9B9999'};
 `
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<Props>`
   cursor: pointer;
   margin-top: 15px;
   width: 300px;
   border: 0;
   border-radius: 18px;
   min-height: 40px;
-  background: #FF3C00;
+  background: ${props => props.disabledStyle ? '#9B9999' : 'red'};
   color: #FFFFFF;
 `
 

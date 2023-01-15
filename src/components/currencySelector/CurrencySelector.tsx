@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Container,
   StyledInput,
@@ -18,13 +18,12 @@ interface CurrencySelectorProps {
 const CurrencySelector: React.FC<CurrencySelectorProps> = ({ handleAddCurrency }) => {
   const [getData, { data }] = useLazyQuery(GET_MARKETS, { fetchPolicy: 'network-only' })
   const [error, setError] = useState(false)
-  const inputRef = useRef<HTMLInputElement>(null)
-
+  const [input, setInput] = useState('')
   useEffect(() => {
-    if ((data?.markets && data.markets.length < 1) && inputRef.current) {
+    if ((data?.markets && data.markets.length < 1) && input !== '') {
       setError(true)
     }
-    if ((data?.markets && data.markets.length > 0) && inputRef.current) {
+    if ((data?.markets && data.markets.length > 0) && input !== '') {
       setError(false)
       handleAddCurrency({
         ticker: data.markets[0].baseSymbol,
@@ -36,19 +35,20 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({ handleAddCurrency }
   return (
         <Container>
             <InputContainer>
-                <StyledInput hasError={error} ref={inputRef}/>
+                <StyledInput hasError={error} onChange={(event) => { setInput(event.target.value) }}/>
                 <StyledInputText hasError={error}>
                     {`Cryptocurrency code ${error ? 'invalid' : ''}`}
                 </StyledInputText>
             </InputContainer>
             <StyledButton
+                disabledStyle={input === ''}
+                disabled={input === ''}
                 onClick={async () => {
-                  if (inputRef?.current?.value === '') {
+                  if (input === '') {
                     setError(true)
                     return
                   }
-                  inputRef.current &&
-                    await getData({ variables: { ticker: `Binance:${inputRef.current.value}/EUR` } })
+                  await getData({ variables: { ticker: `Binance:${input}/EUR` } })
                 }}>
                 Add
             </StyledButton>
