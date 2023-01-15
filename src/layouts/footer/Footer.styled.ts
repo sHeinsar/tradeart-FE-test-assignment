@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const StyledFooter = styled.footer`
+  position: fixed;
+  bottom: 0;
   display: flex;
   flex: 0 1 150px;
   justify-content: center;
@@ -15,7 +17,6 @@ export const StyledFooter = styled.footer`
 export const StyledFooterText = styled.span`
   margin-top: 60px;
   margin-bottom: 20px;
-  min-width: 400px;
   text-align: center;
   font-family: Didot,serif;
   color: #9B9999;

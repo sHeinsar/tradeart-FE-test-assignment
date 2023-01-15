@@ -12,14 +12,14 @@ export const Container = styled.div`
   top: 60px;
   border-radius: 5px;
   padding-inline: 20px;
-  max-width: 450px;
+  width: 450px;
   height: 250px;
   background: #FFFFFF;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1200px) {  
     margin-top: 20px;
     right: 0;
     top: 0;
