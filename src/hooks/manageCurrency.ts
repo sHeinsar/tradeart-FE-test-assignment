@@ -1,17 +1,5 @@
 import { useState } from 'react'
 import { CryptoCurrencyActions, CurrencyData } from '../types/cryptoCurrency'
-import { gql } from '@apollo/client'
-
-export const GET_MARKETS = gql`
-  query($ticker: String!) {
-    markets(filter:{ marketSymbol: {_eq:$ticker} }) {
-      baseSymbol
-      ticker {
-        lastPrice
-      }
-    }
-  }
-`
 
 export const manageCurrency = (): CryptoCurrencyActions => {
   const [trackedCurrencyList, setTrackCurrencyList] = useState<CurrencyData[]>([])

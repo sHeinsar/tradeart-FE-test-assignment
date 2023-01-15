@@ -12,7 +12,7 @@ const App: React.FC = () => {
         <Layout>
             <Content>
                 <Container>
-                    <StyledBitCasinoLogo />
+                    <StyledBitCasinoLogo/>
                     <ContainerRow>
                         <DescriptionBox/>
                         <CurrencySelector handleAddCurrency={handleAddCurrency}/>

@@ -41,8 +41,6 @@ export const CurrencyDataContainer = styled.div`
 `
 
 export const RemoveButton = styled(CloseIcon)`
-  width: 14px;
-  height: 14px;
   margin-left: auto;
   cursor: pointer;
 `

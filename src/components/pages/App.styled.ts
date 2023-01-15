@@ -32,7 +32,7 @@ export const ContainerRow = styled.div`
   align-items: center;
   @media screen and (max-width: 1200px) {
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     justify-content: start;
   }
 `

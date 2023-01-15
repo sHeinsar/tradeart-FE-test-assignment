@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { ReactComponent as loadingIcon } from '../../assets/loading.svg'
 
 interface Props {
   hasError?: boolean
@@ -41,9 +42,9 @@ export const StyledInput = styled.input<Props>`
 export const StyledInputText = styled.div<Props>`
   padding: 0 5px;
   position: absolute;
-  background: #FFFFFF;
   left: 10px;
   top: -7px;
+  background: #FFFFFF;
   font-size: 10px;
   font-family: "Kohinoor Devanagari", serif;
   text-transform: uppercase;
@@ -51,14 +52,17 @@ export const StyledInputText = styled.div<Props>`
 `
 
 export const StyledButton = styled.button<Props>`
-  cursor: pointer;
+  cursor: ${props => props.disabledStyle ? '' : 'pointer'};
   margin-top: 15px;
   width: 300px;
   border: 0;
   border-radius: 18px;
   min-height: 40px;
-  background: ${props => props.disabledStyle ? '#9B9999' : 'red'};
+  background: ${props => props.disabledStyle ? '#9B9999' : '#FF5111'};
   color: #FFFFFF;
+  &:hover {
+    background: ${props => props.disabledStyle ? '#9B9999' : '#ff5a5a'};
+  }
 `
 
 export const StyledTermsAndConditions = styled.span`
@@ -68,4 +72,13 @@ export const StyledTermsAndConditions = styled.span`
   font-size: 14px;
   font-family: "Kohinoor Devanagari", serif;
   color: #9B9999;
+`
+
+export const LoadingIcon = styled(loadingIcon)`
+  background: #FFFFFF;
+  position: absolute;
+  left: 10px;
+  top: -9px;
+  height: 20px;
+  width: 20px;
 `

@@ -11,6 +11,9 @@ export const StyledDescriptionTitle = styled.h1`
   color: #FFFFFF;
   font-family: "Kohinoor Devanagari", serif;
   font-size: xxx-large;
+  @media screen and (max-width: 1200px) {
+    text-align: center;
+  }
 `
 
 export const StyledDescriptionText = styled.span`
