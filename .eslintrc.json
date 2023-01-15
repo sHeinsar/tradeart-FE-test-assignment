@@ -1,8 +1,7 @@
 {
   "extends": [
     "plugin:react/recommended",
-    "standard-with-typescript",
-    "plugin:react-hooks/recommended"
+    "standard-with-typescript"
   ],
   "env": {
     "browser": true

@@ -8,6 +8,7 @@ import { manageCurrency } from '../../hooks/manageCurrency'
 
 const App: React.FC = () => {
   const { trackedCurrencyList, handleRemoveCurrency, handleAddCurrency } = manageCurrency()
+
   return (
         <Layout>
             <Content>

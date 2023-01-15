@@ -4,28 +4,29 @@ import { fireEvent, render, waitFor, screen } from '@testing-library/react'
 import CurrencySelector from '../components/currencySelector/CurrencySelector'
 import React from 'react'
 
-test('component renders correctly', () => {
-  const handleAddCurrency = jest.fn()
-  const mocks = [
-    {
-      request: {
-        query: GET_MARKETS,
-        variables: { ticker: 'Binance:BTC/EUR' }
-      },
-      result: {
-        data: {
-          markets: [
-            {
-              baseSymbol: 'BTC',
-              ticker: {
-                lastPrice: '12345'
-              }
+export const mocks = [
+  {
+    request: {
+      query: GET_MARKETS,
+      variables: { ticker: 'Binance:BTC/EUR' }
+    },
+    result: {
+      data: {
+        markets: [
+          {
+            baseSymbol: 'BTC',
+            ticker: {
+              lastPrice: '12345'
             }
-          ]
-        }
+          }
+        ]
       }
     }
-  ]
+  }
+]
+
+test('component renders correctly', () => {
+  const handleAddCurrency = jest.fn()
   const { container } = render(
         <MockedProvider mocks={mocks}>
             <CurrencySelector handleAddCurrency={handleAddCurrency}/>
@@ -37,28 +38,8 @@ test('component renders correctly', () => {
   expect(handleAddCurrency).toHaveBeenCalledTimes(0)
 })
 
-test('handleAddCurrency function is called when an invalid input is entered and the "Add" button is clicked', async () => {
+test('handleAddCurrency function is not called when an invalid input is entered and the "Add" button is clicked', async () => {
   const handleAddCurrency = jest.fn()
-  const mocks = [
-    {
-      request: {
-        query: GET_MARKETS,
-        variables: { ticker: 'Binance:BTC/EUR' }
-      },
-      result: {
-        data: {
-          markets: [
-            {
-              baseSymbol: 'BTC',
-              ticker: {
-                lastPrice: '12345'
-              }
-            }
-          ]
-        }
-      }
-    }
-  ]
   const { getByText } = render(
       <MockedProvider mocks={mocks}>
         <CurrencySelector handleAddCurrency={handleAddCurrency}/>
@@ -75,26 +56,6 @@ test('handleAddCurrency function is called when an invalid input is entered and 
 
 test('handleAddCurrency function is called when an valid input is entered and the "Add" button is clicked', async () => {
   const handleAddCurrency = jest.fn()
-  const mocks = [
-    {
-      request: {
-        query: GET_MARKETS,
-        variables: { ticker: 'Binance:BTC/EUR' }
-      },
-      result: {
-        data: {
-          markets: [
-            {
-              baseSymbol: 'BTC',
-              ticker: {
-                lastPrice: '12345'
-              }
-            }
-          ]
-        }
-      }
-    }
-  ]
   const { getByText } = render(
       <MockedProvider mocks={mocks}>
         <CurrencySelector handleAddCurrency={handleAddCurrency}/>
