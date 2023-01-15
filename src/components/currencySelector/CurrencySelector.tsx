@@ -38,7 +38,7 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({ handleAddCurrency }
   return (
         <Container>
             <InputContainer>
-                <StyledInput value={input} hasError={error} onChange={(event) => { setInput(event.target.value) }}/>
+                <StyledInput data-testid="input" value={input} hasError={error} onChange={(event) => { setInput(event.target.value) }}/>
                 {loading
                   ? <LoadingIcon />
                   : <StyledInputText hasError={error}>

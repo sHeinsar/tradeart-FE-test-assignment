@@ -20,6 +20,7 @@ export const StyledFooterText = styled.span`
   font-family: Didot,serif;
   color: #9B9999;
   @media screen and (max-width: 800px) {
+    font-size: 12px;
     margin: 0;
   }
 `

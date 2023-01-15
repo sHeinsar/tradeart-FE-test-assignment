@@ -1,7 +1,6 @@
 // src/styles/global.ts
 import { createGlobalStyle } from 'styled-components'
 import BackgroundImage from '../assets/background-image.png'
-// import LeprechaunFigure from '../assets/bitcasino-leprechaun-figure.png'
 
 const GlobalStyle = createGlobalStyle`
   * {

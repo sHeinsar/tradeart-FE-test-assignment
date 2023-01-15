@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component renders correctly 1`] = `
+<div
+  class="sc-bcXHqe bPUpPz"
+>
+  <div
+    class="sc-gswNZR bAnNyH"
+  >
+    <input
+      class="sc-dkrFOg hBIVuz"
+      data-testid="input"
+      value=""
+    />
+    <div
+      class="sc-hLBbgP bZskFg"
+    >
+      Cryptocurrency code 
+    </div>
+  </div>
+  <button
+    class="sc-eDvSVe jBGzVC"
+    disabled=""
+  >
+    Add
+  </button>
+  <span
+    class="sc-jSUZER iWOEvo"
+  >
+    Use of this service is subject to terms and conditions
+  </span>
+</div>
+`;
