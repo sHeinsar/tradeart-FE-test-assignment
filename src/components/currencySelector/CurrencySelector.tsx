@@ -40,6 +40,7 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({ handleAddCurrency }
                 <StyledInputText hasError={error}>{`Cryptocurrency code ${error ? 'not found' : ''}`}</StyledInputText>
             </InputContainer>
             <StyledButton
+                disabled={inputRef?.current?.value === ''}
                 onClick={async () => {
                   if (inputRef?.current?.value === '') {
                     setError(true)

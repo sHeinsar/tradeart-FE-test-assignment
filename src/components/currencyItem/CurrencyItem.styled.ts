@@ -1,8 +1,21 @@
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import { ReactComponent as Icon } from '../../assets/trophy-icon.svg'
 import { ReactComponent as CloseIcon } from '../../assets/close-icon.svg'
 
-export const Container = styled.div`
+interface CurrencyContainerProps {
+  animate: boolean
+}
+
+const slideIn = keyframes`
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+`
+
+export const Container = styled.div<CurrencyContainerProps>`
   padding: 0 60px 10px 0;
   margin-top: 30px;
   display: flex;
@@ -10,6 +23,11 @@ export const Container = styled.div`
   align-items: center;
   border-bottom: 1px solid transparent;
   border-image: linear-gradient(0.25turn, #9B9999, transparent) 1;
+  animation: ${props =>
+          props.animate &&
+          css`
+      ${slideIn} 0.5s linear
+    `};
 `
 
 export const TrophyIcon = styled(Icon)`

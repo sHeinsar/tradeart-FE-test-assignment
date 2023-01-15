@@ -9,7 +9,7 @@ interface CurrencyItemProps {
 
 const CurrencyItem: React.FC<CurrencyItemProps> = ({ title, currentValue, handleRemoveCurrency }) => {
   return (
-        <Container>
+        <Container animate={true}>
             <TrophyIcon />
             <CurrencyDataContainer>
                 <StyledTicker>{title}</StyledTicker>
