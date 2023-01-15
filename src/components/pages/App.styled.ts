@@ -9,6 +9,7 @@ export const Content = styled.div`
   background-position-x: 40em;
   background-position-y: bottom;
   background-size: 650px;
+  padding-bottom: 200px;
 `
 
 export const Container = styled.div`
