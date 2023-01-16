@@ -19,10 +19,13 @@ export const Container = styled.div<CurrencyContainerProps>`
   padding: 0 60px 10px 0;
   margin-top: 30px;
   display: flex;
-  max-width: 350px;
+  max-width: 400px;
   align-items: center;
   border-bottom: 1px solid transparent;
   border-image: linear-gradient(0.25turn, #9B9999, transparent) 1;
+  @media screen and (max-width: 800px) {
+    max-width: 800px;
+  }
   animation: ${props =>
           props.animate &&
           css`
