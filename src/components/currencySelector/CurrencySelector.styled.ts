@@ -19,7 +19,8 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media screen and (max-width: 1200px) {  
+  @media screen and (max-width: 1200px) { 
+    width: 375px;
     margin-top: 20px;
     right: 0;
     top: 0;
